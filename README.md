@@ -42,6 +42,9 @@ docker save -o <path for generated tar file> <image name>
 # loads an image into docker from the saved tar file
 docker load -i <path to image tar file>
 
+# stop and remove container in the one command
+docker rm -f <container id>
+
 # create a new overlay network - making it attachable means any
 # container can join the network
 docker network create -d overlay --attachable <network name> 
