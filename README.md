@@ -200,7 +200,7 @@ sudo mkdir /shared
 
 # create a local registry for docker images between host machines (rather than docker hub) 
 # creates registry at $MANAGER_IP:5000
-docker service create --name registry --publish published=5000,target=5000 registry:2
+docker service create --name registry --publish published=5000,target=5000 --constraint 'node.role == manager' registry:2
 
 # export required environment variables
 export CUDA_VERSION=9.0
