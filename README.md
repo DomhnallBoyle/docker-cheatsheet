@@ -55,6 +55,12 @@ docker network create -d overlay --attachable <network name>
 # attach the container to an pre-created network
 # uses nvidia-runtime if not already defined in the daemon
 docker run -d --runtime=nvidia -v /shared:/shared -p 5000:5000 --network <network name> -it <image id> 
+
+# remove all containers (includes running)
+docker rm -f $(docker ps -a -q)
+
+# remove all docker images
+docker rmi $(docker images -q)
 ```
 
 ## Docker Compose
