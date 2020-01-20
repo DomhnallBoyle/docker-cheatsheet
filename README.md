@@ -61,6 +61,9 @@ docker rm -f $(docker ps -a -q)
 
 # remove all docker images
 docker rmi $(docker images -q)
+
+# remove dangling images
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
 
 ## Docker Compose
