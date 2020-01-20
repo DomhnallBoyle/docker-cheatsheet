@@ -64,6 +64,10 @@ docker rmi $(docker images -q)
 
 # remove dangling images
 docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+
+# bash into stopped/exited container
+docker commit <container name> <image name> # commit container changes to new image
+docker run -v ... -it <image name> bash
 ```
 
 ## Docker Compose
